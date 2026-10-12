@@ -150,7 +150,7 @@ async def on_ready():
 {c}--------------------------------------------
 {g}[+] Logged in as {client.user}
 {y}[!] Slash Commands Enabled
-{y}[!] Status: Streaming .gg/wepaid JOIN NOW
+{y}[!] Status: Streaming .gg/REINCARNATED JOIN NOW
 {y}[!] Whitelisted Servers: {WHITELISTED_SERVER_IDS}
 {c}--------------------------------------------''')
     asyncio.create_task(check_logs_task())
@@ -174,7 +174,7 @@ async def on_member_join(member):
     embed.set_thumbnail(url=member.display_avatar.url)
     
     # We stopped sending to drac-logs and moved to the dedicated verify log channel
-    log_channel_id = 1479710105292374068
+    log_channel_id = 1559339621173956688
     log_channel = client.get_channel(log_channel_id)
     if log_channel:
         try: await log_channel.send(embed=embed)
@@ -189,7 +189,7 @@ async def check_logs_task():
             rows = cur.fetchall()
             
             if rows:
-                log_channel_id = 1479710105292374068
+                log_channel_id = 1559333072422445099
                 channel = client.get_channel(log_channel_id)
                 if channel:
                     for key, value in rows:

