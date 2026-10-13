@@ -141,7 +141,7 @@ async def on_ready():
     
     # Set streaming status
     activity = discord.Streaming(
-        name=".gg/wepaid JOIN NOW",
+        name=".gg/reincarnated JOIN NOW",
         url="https://www.twitch.tv/4TBSPAAZ"
     )
     await client.change_presence(activity=activity)
