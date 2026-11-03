@@ -70,6 +70,15 @@ def add_premium(user_id):
     conn.commit()
     conn.close()
 
+def remove_premium(user_id):
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("DELETE FROM premium_users WHERE user_id = ?", (user_id,))
+    removed = cur.rowcount > 0
+    conn.commit()
+    conn.close()
+    return removed
+
 setup_db()
 
 async def delete_all_channels(guild):
@@ -612,6 +621,17 @@ async def add_premium_slash(interaction: discord.Interaction, user: discord.User
          return await interaction.response.send_message("❌ Owner Only!", ephemeral=True)
     add_premium(user.id)
     await interaction.response.send_message(f"✅ {user.name} is now Premium!", ephemeral=True)
+
+@client.tree.command(name="remove_premium", description="Remove premium from a user")
+async def remove_premium_slash(interaction: discord.Interaction, user: discord.User):
+    if not await client.is_owner(interaction.user):
+        return await interaction.response.send_message("❌ Owner Only!", ephemeral=True)
+
+    if remove_premium(user.id):
+        message = f"✅ Premium removed from {user.name}."
+    else:
+        message = f"ℹ️ {user.name} does not have Premium."
+    await interaction.response.send_message(message, ephemeral=True)
 
 @client.tree.command(name="announce", description="Send an embed announcement")
 @app_commands.describe(title="Announcement Title", message="Announcement Message", channel="Channel to send to (optional for local)", global_announcement="Send to all servers?")

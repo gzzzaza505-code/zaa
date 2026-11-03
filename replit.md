@@ -30,6 +30,7 @@ A powerful Discord bot with server management, ticket systems, IP-logging verifi
 - `/massdm`: DM everyone in the server.
 - `/announce`: Send global or local announcements.
 - `/add_premium`: Grant premium to a user.
+- `/remove_premium`: Remove premium from a user.
 
 ## Configuration
 - **Owner IDs**: `1443051529190772768`, `980129921596788736`
